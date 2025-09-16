@@ -6,6 +6,19 @@ export const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/80" />
+      
+      {/* Gaming Background Image */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `url('/src/assets/gaming-background.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(3px)'
+        }}
+      />
+      
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} />
       
@@ -15,7 +28,7 @@ export const HeroSection = () => {
           <img 
             src={logoImage} 
             alt="NowOrNever Gaming Company Logo" 
-            className="h-48 w-auto mx-auto glow-effect animate-float glitch-effect hover:scale-110 transition-transform duration-300 cursor-pointer"
+            className="h-96 w-auto mx-auto glow-effect animate-float glitch-effect hover:scale-110 transition-transform duration-500 cursor-pointer"
           />
         </div>
 

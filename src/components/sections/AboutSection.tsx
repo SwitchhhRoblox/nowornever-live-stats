@@ -91,7 +91,7 @@ export const AboutSection = () => {
               </p>
               <p>
                 Today, we're proud to serve thousands of active players with our flagship title, 
-                <span className="text-gradient-secondary font-semibold"> Brainrot Tower Defense</span>, 
+                <span className="text-gradient-secondary font-semibold"> Soccer Impact</span>, 
                 and we're just getting started. The future holds endless possibilities for interactive entertainment.
               </p>
             </div>
@@ -106,45 +106,26 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          {/* Quick Stats */}
+          {/* Core Values Section */}
           <div className="space-y-8 animate-slide-in-right">
             <h3 className="text-3xl font-bold text-foreground text-center">
-              Impact by Numbers
+              Our Philosophy
             </h3>
             
-            {!loading && (
-              <div className="grid grid-cols-2 gap-6">
-                {quickStats.map((stat, index) => (
-                  <div 
-                    key={stat.label}
-                    className="stat-card text-center animate-scale-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className={`text-3xl font-bold ${stat.color} mb-2`}>
-                      <AnimatedCounter 
-                        end={stat.value} 
-                        suffix={stat.suffix || ''}
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-            
-            {/* Achievement Badges */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-foreground text-center">Recent Achievements</h4>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {['Featured Game', 'Top Rated', 'Growing Fast', 'Community Loved'].map((achievement) => (
-                  <span 
-                    key={achievement}
-                    className="px-4 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 text-foreground text-sm rounded-full border border-primary/30 animate-glow"
-                  >
-                    {achievement}
-                  </span>
-                ))}
-              </div>
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h4 className="text-xl font-bold text-gradient-secondary mb-3">Quality First</h4>
+              <p className="text-muted-foreground">
+                We believe in creating fewer, better games rather than rushing to market. Every project receives 
+                the attention and polish it deserves to deliver exceptional player experiences.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h4 className="text-xl font-bold text-gradient-primary mb-3">Community Driven</h4>
+              <p className="text-muted-foreground">
+                Our players inspire everything we do. We listen, we adapt, and we create games that bring 
+                people together in meaningful ways.
+              </p>
             </div>
           </div>
         </div>
@@ -188,7 +169,7 @@ export const AboutSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 className="btn-gaming"
-                onClick={() => window.open('https://www.roblox.com/games/79021943931147/NEW-Brainrot-Tower-Defense', '_blank')}
+                onClick={() => window.open('https://www.roblox.com/games/86232037320791/Soccer-Impact', '_blank')}
               >
                 Play Our Games
               </button>

@@ -243,7 +243,7 @@ export const ContactSection = () => {
               <div className="grid grid-cols-1 gap-3">
                 <button 
                   className="btn-secondary-gaming justify-start"
-                  onClick={() => window.open('https://www.roblox.com/games/79021943931147/NEW-Brainrot-Tower-Defense', '_blank')}
+                  onClick={() => window.open('https://www.roblox.com/games/86232037320791/Soccer-Impact', '_blank')}
                 >
                   Play Our Featured Game
                 </button>
