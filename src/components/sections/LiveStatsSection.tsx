@@ -34,7 +34,7 @@ export const LiveStatsSection = () => {
     {
       icon: GamepadIcon,
       label: 'Games Published',
-      value: 0,
+      value: 2,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
       delay: '0s'
@@ -42,7 +42,7 @@ export const LiveStatsSection = () => {
     {
       icon: Users,
       label: 'Peak Active Players',
-      value: 0,
+      value: 2100,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
       delay: '0.1s'
@@ -50,7 +50,7 @@ export const LiveStatsSection = () => {
     {
       icon: Eye,
       label: 'Total Visits',
-      value: 0,
+      value: 3000000,
       color: 'text-accent',
       bgColor: 'bg-accent/10',
       delay: '0.2s'
@@ -58,7 +58,7 @@ export const LiveStatsSection = () => {
     {
       icon: Trophy,
       label: 'Average Rating',
-      value: 0,
+      value: 100,
       suffix: '%',
       color: 'text-warning',
       bgColor: 'bg-warning/10',

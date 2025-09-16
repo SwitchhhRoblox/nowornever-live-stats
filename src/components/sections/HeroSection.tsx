@@ -28,7 +28,7 @@ export const HeroSection = () => {
           <img 
             src={logoImage} 
             alt="NowOrNever Gaming Company Logo" 
-            className="h-96 w-auto mx-auto glow-effect animate-float glitch-effect hover:scale-110 transition-transform duration-500 cursor-pointer"
+            className="h-[32rem] w-auto mx-auto glow-effect animate-float glitch-effect hover:scale-110 transition-transform duration-500 cursor-pointer"
           />
         </div>
 
