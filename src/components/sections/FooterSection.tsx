@@ -107,9 +107,6 @@ export const FooterSection = () => {
             <p className="text-muted-foreground">
               © 2024 NowOrNever Gaming Company. All rights reserved.
             </p>
-            <p className="text-sm text-muted-foreground mt-1">
-              Made with <Heart className="w-4 h-4 text-destructive mx-1 inline" /> for gamers worldwide
-            </p>
           </div>
           
           {/* Scroll to Top */}

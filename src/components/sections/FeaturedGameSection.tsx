@@ -43,59 +43,79 @@ export const FeaturedGameSection = () => {
         </div>
 
         {/* Games Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {games.map((game, index) => (
             <div key={game.id} className="animate-slide-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="card-game group cursor-pointer" onClick={() => handlePlayGame(game.url)}>
-                {/* Game Thumbnail */}
-                <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 relative overflow-hidden rounded-t-lg">
-                  {game.thumbnail ? (
-                    <img 
-                      src={game.thumbnail} 
-                      alt={`${game.name} gameplay screenshot`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <Gamepad2 className="w-16 h-16 text-primary animate-glow" />
+              <div 
+                className="relative card-game group cursor-pointer transform transition-all duration-300 hover:scale-105 col-span-full max-w-4xl mx-auto"
+                onClick={() => handlePlayGame(game.url)}
+              >
+                {/* Coming Soon Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm rounded-lg flex items-center justify-center z-10 border-2 border-primary/30">
+                  <div className="text-center space-y-4">
+                    <div className="text-6xl font-bold text-gradient-primary animate-pulse">
+                      COMING SOON
                     </div>
-                  )}
-                  
-                  {/* Play Overlay */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-primary/20 rounded-full p-6 backdrop-blur-sm">
-                      <Gamepad2 className="w-12 h-12 text-white animate-glow" />
+                    <div className="text-lg text-muted-foreground">
+                      Get ready for the ultimate gaming experience
                     </div>
                   </div>
                 </div>
 
-                {/* Game Info */}
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {game.name}
-                  </h3>
-                  
-                  {game.playing && (
-                    <div className="flex items-center gap-2">
-                      <Users className="w-5 h-5 text-primary" />
-                      <span className="text-gradient-primary font-semibold">
-                        {game.playing} playing now
-                      </span>
+                <div className="flex flex-col lg:flex-row items-center gap-8 p-8">
+                  {/* Game Thumbnail */}
+                  <div className="w-full lg:w-1/2 h-80 bg-muted rounded-lg overflow-hidden relative">
+                    {game.thumbnail ? (
+                      <img 
+                        src={game.thumbnail} 
+                        alt={`${game.name} thumbnail`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          if (target.nextElementSibling) {
+                            (target.nextElementSibling as HTMLElement).style.display = 'flex';
+                          }
+                        }}
+                      />
+                    ) : null}
+                    <div className="absolute inset-0 flex items-center justify-center bg-muted" style={{ display: game.thumbnail ? 'none' : 'flex' }}>
+                      <Gamepad2 className="w-24 h-24 text-muted-foreground" />
                     </div>
-                  )}
+                  </div>
 
-                  {/* Play Button */}
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handlePlayGame(game.url);
-                    }}
-                    className="btn-gaming w-full inline-flex items-center justify-center gap-3"
-                  >
-                    <Gamepad2 className="w-5 h-5" />
-                    Play on Roblox
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
+                  {/* Game Info */}
+                  <div className="flex-1 space-y-6 text-center lg:text-left">
+                    <h3 className="text-4xl lg:text-5xl font-bold text-gradient-primary group-hover:text-gradient-secondary transition-all duration-300">
+                      {game.name}
+                    </h3>
+                    
+                    {game.playing !== undefined && (
+                      <div className="flex items-center justify-center lg:justify-start gap-3 text-lg text-muted-foreground">
+                        <Users className="w-6 h-6" />
+                        <span>
+                          {game.playing.toLocaleString()} playing now
+                        </span>
+                      </div>
+                    )}
+
+                    <p className="text-lg text-muted-foreground max-w-2xl">
+                      Experience the next evolution of soccer gaming with revolutionary mechanics, 
+                      stunning visuals, and competitive gameplay that will redefine sports gaming forever.
+                    </p>
+
+                    {/* Play Button */}
+                    <button
+                      className="btn-gaming text-xl px-12 py-6"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handlePlayGame(game.url);
+                      }}
+                    >
+                      <ExternalLink className="w-6 h-6" />
+                      Play on Roblox
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

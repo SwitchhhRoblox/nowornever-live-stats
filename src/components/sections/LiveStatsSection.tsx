@@ -34,15 +34,15 @@ export const LiveStatsSection = () => {
     {
       icon: GamepadIcon,
       label: 'Games Published',
-      value: companyStats.totalGames,
+      value: 1,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
       delay: '0s'
     },
     {
       icon: Users,
-      label: 'Active Players',
-      value: companyStats.totalPlayers,
+      label: 'Peak Active Players',
+      value: 2100,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
       delay: '0.1s'
@@ -50,7 +50,7 @@ export const LiveStatsSection = () => {
     {
       icon: Eye,
       label: 'Total Visits',
-      value: companyStats.totalVisits,
+      value: 3000000,
       color: 'text-accent',
       bgColor: 'bg-accent/10',
       delay: '0.2s'
@@ -58,8 +58,8 @@ export const LiveStatsSection = () => {
     {
       icon: Trophy,
       label: 'Average Rating',
-      value: companyStats.averageRating,
-      suffix: '/5.0',
+      value: 97,
+      suffix: '%',
       color: 'text-warning',
       bgColor: 'bg-warning/10',
       delay: '0.3s'
@@ -72,12 +72,11 @@ export const LiveStatsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient-secondary mb-4">
-            Live Company Stats
+            Company Statistics
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto rounded-full" />
           <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
-            Real-time statistics showcasing our impact in the gaming community. 
-            Updated every 30 seconds with live data from Roblox.
+            Our achievements and milestones in the gaming industry
           </p>
         </div>
 
@@ -110,24 +109,15 @@ export const LiveStatsSection = () => {
                 {/* Additional Info */}
                 <div className="text-sm text-muted-foreground">
                   {stat.label === 'Games Published' && 'Quality over quantity'}
-                  {stat.label === 'Active Players' && 'Players online now'}
+                  {stat.label === 'Peak Active Players' && 'Record concurrent players'}
                   {stat.label === 'Total Visits' && 'All-time game visits'}
-                  {stat.label === 'Average Rating' && 'Community rating'}
+                  {stat.label === 'Average Rating' && 'Community satisfaction'}
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Live Update Indicator */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full">
-            <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Live updates every 30 seconds
-            </span>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export const HeroSection = () => {
           <img 
             src={logoImage} 
             alt="NowOrNever Gaming Company Logo" 
-            className="h-32 w-auto mx-auto glow-effect animate-float"
+            className="h-48 w-auto mx-auto glow-effect animate-float glitch-effect hover:scale-110 transition-transform duration-300 cursor-pointer"
           />
         </div>
 
@@ -34,7 +34,7 @@ export const HeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          From tower defense to adventure games, we build worlds that captivate millions of players worldwide
+          Pioneering the future of interactive entertainment with cutting-edge game development and innovative player experiences
         </p>
 
         {/* CTA Buttons */}
@@ -49,9 +49,9 @@ export const HeroSection = () => {
           
           <button 
             className="btn-secondary-gaming inline-flex items-center gap-3"
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Learn More
+            Get In Touch
           </button>
         </div>
 
